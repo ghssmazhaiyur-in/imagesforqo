@@ -1,0 +1,224 @@
+/* Style for the question image (large size) */
+.question-image {
+    width: 100%; /* Ensure the image fills its container */
+    max-width: 100%; /* Limit maximum width to container width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px auto; /* Center the image with some margin */
+}
+
+/* Style for the option images (medium size) */
+.option-image {
+    width: 50%; /* Ensure the option image is medium-sized */
+    max-width: 50%; /* Limit maximum width to half the container width */
+    height: auto; /* Maintain aspect ratio */
+    display: inline-block; /* Ensure option images display inline */
+    margin: 10px 0; /* Add margin above and below */
+}
+
+/* Container for the question box */
+#questionBox {
+    padding: 20px; /* Add padding around the question */
+    border: 1px solid #ccc; /* Add border for clarity */
+    background-color: #f9f9f9; /* Light background color */
+    text-align: center; /* Center align content */
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.modal-content {
+    margin: 15% auto; /* 15% from the top and centered */
+    display: block;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+.container {
+    display: flex;
+    height: 100vh; /* Full height */
+}
+
+#mainContent {
+    flex: 3; /* Take up 3/4 of the screen */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow-y: auto;
+}
+
+#questionBox {
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    border-bottom: 2px solid #ccc; /* Border line between questions */
+    padding-bottom: 20px;
+    font-size: 20px; /* Increase font size for questions */
+}
+
+#controls {
+    margin: 20px 0; /* Add margin to separate controls from question box */
+    display: flex;
+    justify-content: space-between; /* Space out the buttons */
+    width: 100%;
+    max-width: 800px;
+}
+
+#controls button {
+    margin: 10px;
+    padding: 12px 24px; /* Increase padding for larger buttons */
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+#prevButton {
+    background-color: #f39c12; /* Attractive color for previous button */
+    color: white;
+}
+
+#prevButton:hover {
+    background-color: #e67e22;
+}
+
+#nextButton {
+    background-color: #27ae60; /* Green background for next button */
+    color: white;
+}
+
+#nextButton:hover {
+    background-color: #2ecc71;
+}
+
+#submitButton {
+    background-color: #0026ff; /* Yellow background for submit button */
+    color: white;
+}
+
+#submitButton:hover {
+    background-color: #f39c12;
+}
+
+#homeButton {
+    display: none; /* Initially hide the Home button */
+    margin-top: 20px; /* Add margin to push the button down */
+    background-color: #28a745; /* Green background for home button */
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#homeButton:hover {
+    background-color: #218838;
+}
+
+#homeButton:active {
+    background-color: #1e7e34;
+}
+
+#questionNavContainer {
+    flex: 1; /* Take up 1/4 of the screen */
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-left: 2px solid #ccc; /* Border between main content and navigation */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#questionNav {
+    display: flex;
+    flex-wrap: wrap; /* Wrap items if they exceed container width */
+    justify-content: center; /* Center items horizontally */
+    max-height: calc(100vh - 80px); /* Adjust max height to fit remaining screen space */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+    gap: 10px; /* Space between question numbers */
+}
+
+#questionNav li {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 4px; /* Rounded corners for squares */
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    list-style-type: none; /* Remove list-style type (dots) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#questionNav li.answered {
+    background-color: #6c5ce7; /* Purple background for answered questions */
+    color: white; /* White text for answered questions */
+}
+
+#questionNav li:not(.answered) {
+    background-color: #ddd; /* Grey background for unanswered questions */
+    color: #555; /* Darker text for unanswered questions */
+}
+
+#questionNav li:hover {
+    background-color: #f39c12; /* Orange background on hover */
+    color: white;
+}
+
+#quizResults {
+    position: relative;
+}
+
+#homeButton {
+    position: absolute;
+    bottom: 100px; /* Adjust as needed */
+    left: 20;
+    right: 85%;
+    z-index: 1000;
+}

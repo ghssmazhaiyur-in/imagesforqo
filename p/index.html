@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="mainContent">
+            <div id="questionBox"></div>
+            <div id="controls">
+                <button id="prevButton" onclick="previousQuestion()">Previous</button>
+                <button id="nextButton" onclick="nextQuestion()">Next</button>
+                <button id="submitButton" onclick="submitQuiz()">Submit</button>
+            </div>
+        </div>
+        <div id="questionNavContainer">
+            <ul id="questionNav"></ul>
+        </div>
+        <button id="homeButton" onclick="loadHomePage()">Home</button>
+    </div>
+
+    <!-- The Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script src="5.js"></script>
+    <script>
+        function loadHomePage() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
